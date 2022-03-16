@@ -1,0 +1,31 @@
+ALGORITHM HashDistinct
+VAR
+    A : ARRAY_OF INTEGER[] := [1,3,4,5]
+    B : ARRAY_OF INTEGER[] := [3,7,8,1]
+    h : HASH_TABLE<INTEGER,INTEGER>
+    Sum : INTEGER := 0
+BEGIN
+    FOR i FROM 1 TO A.length STEP 1  DO
+        h.insert(A[i],1)
+    END_FOR
+    FOR i FROM 1 TO B.length STEP 1  DO
+        IF (h.lookup(B[i]) = true) THEN
+            h.insert(B[i],2)
+
+        ELSE
+            h.insert(B[i],1)
+        END_IF
+    END_FOR
+    FOR i FROM 1 TO A.length STEP 1  DO
+        IF (h.get(A[i]) = 1) THEN
+            Sum = Sum + A[i]
+        END_IF
+    END_FOR
+    FOR i FROM 1 TO B.length STEP 1  DO
+        IF (h.get(B[i]) = 1) THEN
+            Sum = Sum + B[i]
+        END_IF
+    END_FOR
+ 
+ Write (sum)
+END

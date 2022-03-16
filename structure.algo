@@ -1,0 +1,34 @@
+ALGORITHM traverse_array
+VAR
+tab1 : ARRAY_OF INTEGER [12,13,6,10];
+tab2 : ARRAY_OF INTEGER [13,10,16,15];
+i,j,SUM: INTEGER;
+BEGIN
+
+
+FOR i FROM 0 TO Set1.lenght-1 STEP step  DO
+bool:=false
+FOR j FROM 0 TO Set1.lenght-1 STEP step  DO
+    IF (Set1[i]=Set2[j] THEN
+    bool:=true
+break
+    END_IF
+END_FOR
+IF (bool=false) THEN
+sum:=sum+set1[i]
+END_IF
+END_FOR
+For i FROM 0 TO set2.lenght-1 DO
+bool=false
+FOR k FROM 0 TO set2.lenght-1 DO
+IF (set2[i]=set1[k])THEN
+bool:=true
+break
+END-IF
+END-FOR
+IF (bool=false) THEN
+sum:=sum+set2[i]
+END_IF
+END_FOR
+write(sum)
+END

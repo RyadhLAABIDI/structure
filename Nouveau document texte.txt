@@ -1,0 +1,28 @@
+ALGORITHM algorithm_name
+VAR
+    set1:ARRAY-OF INTEGER :=[3,1,7,9];
+    set2: ARRAY-OF INTEGER := [2,4,1,9,3]
+    k,i,j,sum:=integer:=0
+    h : HASH-TABLE<INTEGER,INTEGER>
+
+BEGIN
+    // hash table insert 
+FOR i FROM 1 TO set1.length  DO
+h.insert(set1[i],1)
+END_FOR
+//hash set2 
+FOR j FROM 1 TO set2.length  DO
+//set1wset2 w key 
+    IF (h.lookup(set2[j]=true))THEN
+        h.insert(set2[j],2)
+        else 
+        h.insert(set2[j],1)
+    END_IF
+END_FOR
+///
+FOR k FROM 1 TO set1.length DO
+   if(h.get(set1[k])=2)THEN
+   sum:=sum+set1[i]*2
+   end_if
+END_FOR
+write(sum)
